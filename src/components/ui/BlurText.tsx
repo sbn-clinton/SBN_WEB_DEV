@@ -103,20 +103,24 @@ const BlurText: React.FC<BlurTextProps> = ({
     }))
   );
 
+  const AnimatedSpan = animated.span as React.FC<
+    React.HTMLAttributes<HTMLSpanElement>
+  >;
+
   return (
     <p
       ref={ref}
       className={`blur-text ${className} md:text-6xl text-3xl  font-bold text-white flex flex-wrap`}
     >
       {springs.map((props, index) => (
-        <animated.span
+        <AnimatedSpan
           key={index}
           style={props}
           className="inline-block transition-transform will-change-[transform,filter,opacity]"
         >
           {elements[index] === " " ? "\u00A0" : elements[index]}
           {animateBy === "words" && index < elements.length - 1 && "\u00A0"}
-        </animated.span>
+        </AnimatedSpan>
       ))}
     </p>
   );
