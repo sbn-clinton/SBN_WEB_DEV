@@ -35,6 +35,8 @@ const SplitText: React.FC<SplitTextProps> = ({
   const ref = useRef<HTMLParagraphElement>(null);
   const animatedCount = useRef(0);
 
+  const AnimatedSpan = animated("span");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -96,15 +98,16 @@ const SplitText: React.FC<SplitTextProps> = ({
               letterIndex;
 
             return (
-              <animated.span
+              <AnimatedSpan
                 key={index}
-                style={springs[index] as unknown as React.CSSProperties}
+                style={springs[index]}
                 className="inline-block transform transition-opacity will-change-transform"
               >
                 {letter}
-              </animated.span>
+              </AnimatedSpan>
             );
           })}
+
           <span style={{ display: "inline-block", width: "0.3em" }}>
             &nbsp;
           </span>
