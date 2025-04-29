@@ -16,7 +16,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className="h-32 w-32 md:h-40 md:w-40 border-8 border-stone-700/10 bg-stone-700/10 border-backdrop-blur-md rounded-full"
+        className="h-28 w-28 md:h-40 md:w-40 border-8 border-stone-700/10 bg-stone-700/10 border-backdrop-blur-md rounded-full"
       >
         <div className="w-full h-full relative rounded-full">
           <Image
